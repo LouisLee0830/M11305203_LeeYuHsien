@@ -2,7 +2,7 @@
 
 Final exam repository for course CT5805701 (Software Engineering in Construction Information Systems)
 
-# Internet Users Analysis Platform
+## Internet Users Analysis Platform
 
 This project is a three-tier web application developed as a final exam for the Database Systems course.
 
@@ -14,7 +14,7 @@ The system analyzes the **Number of Internet Users** across countries, regions, 
 
 The database was designed based on two CSV datasets and normalized to **Third Normal Form (3NF)**.
 
-### Main Entities
+## Main Entities
 - Region
 - SubRegion
 - IntermediateRegion
