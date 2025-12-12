@@ -8,8 +8,10 @@ M11305203_LeeYuHsien/
 │── ETL.sql           
 │── compose.yaml      
 └── app/
-    ├── app.js        
-    ├── package.json 
+    ├── app.js
+    ├── config.js       
+    ├── package.json
+    ├── package-lock.json
     ├── routes/       
     ├── views/        
     └── public/
