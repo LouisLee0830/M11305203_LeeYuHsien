@@ -56,3 +56,8 @@ app.use("/country", country);
 const subregionYear = require("./routes/subregion_year");
 subregionYear.connection = connection;
 app.use("/subregion-year", subregionYear);
+
+const regionYear = require("./routes/region_year");
+regionYear.connection = connection;
+app.use("/region-year", regionYear);
+
