@@ -1,0 +1,21 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-check-circle"></i> Delete Completed</h2>
+
+  <div class="alert alert-success">
+    Delete operation completed.
+  </div>
+
+  <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Country</span><span>{{countryName}} (ID: {{countryId}})</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Year Range</span><span>{{startYear}} ~ {{endYear}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Deleted Rows</span><span>{{deletedRows}}</span>
+    </li>
+  </ul>
+
+  <a class="btn btn-outline-primary" href="/country/">Back to Country Timeline</a>
+</div>

@@ -72,3 +72,7 @@ app.use("/records/add", recordAdd);
 const recordUpdate = require("./routes/record_update");
 recordUpdate.connection = connection;
 app.use("/records/update", recordUpdate);
+
+const recordDelete = require("./routes/record_delete");
+recordDelete.connection = connection;
+app.use("/records/delete", recordDelete);

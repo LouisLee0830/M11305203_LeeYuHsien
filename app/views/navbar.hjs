@@ -17,6 +17,7 @@
           <a class="nav-link" href="/country-search/">Country Search</a>
           <a class="nav-link" href="/records/add/">Add Record</a>
           <a class="nav-link" href="/records/update/">Update Record</a>
+          <a class="nav-link" href="/records/delete/">Delete Records</a>
 
         </li>
       </ul>

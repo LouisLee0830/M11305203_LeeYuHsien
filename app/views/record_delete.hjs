@@ -1,0 +1,50 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-trash"></i> Delete Records</h2>
+  <p class="text-muted">
+    Select a country and a year range. Preview the affected records before confirming the delete.
+  </p>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Country</label>
+      <select class="form-select" id="countryId" name="countryId">
+        <option value="">-- Choose a country --</option>
+        {{#countries}}
+          <option value="{{CountryID}}">{{CountryName}}</option>
+        {{/countries}}
+      </select>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <label class="form-label">Start Year</label>
+      <select class="form-select" id="y1" name="y1">
+        <option value="">-- Start --</option>
+        {{#years}}
+          <option value="{{Year}}">{{Year}}</option>
+        {{/years}}
+      </select>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <label class="form-label">End Year</label>
+      <select class="form-select" id="y2" name="y2">
+        <option value="">-- End --</option>
+        {{#years}}
+          <option value="{{Year}}">{{Year}}</option>
+        {{/years}}
+      </select>
+    </div>
+  </div>
+
+  <button class="btn btn-danger mb-3"
+          hx-get="/records/delete/preview"
+          hx-target="#preview"
+          hx-include="#countryId, #y1, #y2"
+          hx-params="countryId,y1,y2">
+    Preview Delete
+  </button>
+
+  <div id="preview">
+    <div class="text-muted">Choose a country and a year range, then click “Preview Delete”.</div>
+  </div>
+</div>
