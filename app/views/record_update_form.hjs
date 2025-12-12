@@ -1,0 +1,27 @@
+{{#hasData}}
+  <div class="card">
+    <div class="card-body">
+      <h3 class="h6 mb-3">
+        Editing: <strong>{{countryName}}</strong> — Year <strong>{{year}}</strong>
+      </h3>
+
+      <form method="POST" action="/records/update/submit">
+        <input type="hidden" name="countryId" value="{{countryId}}">
+        <input type="hidden" name="year" value="{{year}}">
+
+        <div class="mb-3">
+          <label class="form-label">Internet Users</label>
+          <input class="form-control" type="number" min="0" step="1" name="internetUsers" value="{{internetUsers}}" required>
+        </div>
+
+        <button class="btn btn-success" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+{{/hasData}}
+
+{{^hasData}}
+  <div class="alert alert-warning mb-0">
+    No record found for CountryID {{countryId}} in Year {{year}}.
+  </div>
+{{/hasData}}

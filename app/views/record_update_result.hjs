@@ -1,0 +1,21 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-check-circle"></i> Update Success</h2>
+
+  <div class="alert alert-success">
+    The record has been updated successfully.
+  </div>
+
+  <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between">
+      <span>CountryID</span><span>{{countryId}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Year</span><span>{{year}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Internet Users</span><span>{{internetUsers}}</span>
+    </li>
+  </ul>
+
+  <a class="btn btn-outline-primary" href="/country/">Back to Country Timeline</a>
+</div>

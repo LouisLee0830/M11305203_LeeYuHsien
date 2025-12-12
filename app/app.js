@@ -68,3 +68,7 @@ app.use("/country-search", countrySearch);
 const recordAdd = require("./routes/record_add");
 recordAdd.connection = connection;
 app.use("/records/add", recordAdd);
+
+const recordUpdate = require("./routes/record_update");
+recordUpdate.connection = connection;
+app.use("/records/update", recordUpdate);
