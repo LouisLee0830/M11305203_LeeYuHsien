@@ -14,6 +14,7 @@
           <a class="nav-link" href="/country/">Country Timeline</a>
           <a class="nav-link" href="/subregion-year/">Sub-region by Year</a>
           <a class="nav-link" href="/region-year/">Region Summary</a>
+          <a class="nav-link" href="/country-search/">Country Search</a>
 
         </li>
       </ul>

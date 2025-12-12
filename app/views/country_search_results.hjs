@@ -1,0 +1,28 @@
+{{#message}}
+  <div class="alert alert-secondary mb-0">{{message}}</div>
+{{/message}}
+
+{{#hasData}}
+  <div class="mb-2 text-muted">
+    Results for "<strong>{{q}}</strong>" (showing most recent year per country)
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th class="text-end">Latest Year</th>
+        <th class="text-end">Internet Users</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#rows}}
+        <tr>
+          <td>{{CountryName}}</td>
+          <td class="text-end">{{LatestYear}}</td>
+          <td class="text-end">{{InternetUsers}}</td>
+        </tr>
+      {{/rows}}
+    </tbody>
+  </table>
+{{/hasData}}

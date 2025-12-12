@@ -61,3 +61,6 @@ const regionYear = require("./routes/region_year");
 regionYear.connection = connection;
 app.use("/region-year", regionYear);
 
+const countrySearch = require("./routes/country_search");
+countrySearch.connection = connection;
+app.use("/country-search", countrySearch);

@@ -1,0 +1,23 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-search"></i> Country Search</h2>
+  <p class="text-muted">
+    Search by country name (partial match). The results show each country’s Internet users in its most recent available year.
+  </p>
+
+  <div class="mb-3">
+    <label class="form-label">Keyword</label>
+    <input type="text"
+           class="form-control"
+           name="q"
+           id="q"
+           placeholder="e.g., land, united, tai..."
+           hx-get="/country-search/results"
+           hx-trigger="keyup changed delay:300ms"
+           hx-target="#result"
+           hx-include="#q">
+  </div>
+
+  <div id="result">
+    <div class="text-muted">Type a keyword to search (partial match).</div>
+  </div>
+</div>
