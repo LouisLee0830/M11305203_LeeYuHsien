@@ -1,0 +1,26 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-plus-circle"></i> Add Record (Next Year)</h2>
+  <p class="text-muted">
+    Select a country and enter the Internet users value. The system will automatically insert the record for the next year
+    based on the latest year for that country.
+  </p>
+
+  <form method="POST" action="/records/add/submit">
+    <div class="mb-3">
+      <label class="form-label">Country</label>
+      <select class="form-select" name="countryId" required>
+        <option value="">-- Choose a country --</option>
+        {{#countries}}
+          <option value="{{CountryID}}">{{CountryName}}</option>
+        {{/countries}}
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Internet Users (number)</label>
+      <input class="form-control" type="number" name="internetUsers" min="0" step="1" required>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add Next Year Record</button>
+  </form>
+</div>

@@ -64,3 +64,7 @@ app.use("/region-year", regionYear);
 const countrySearch = require("./routes/country_search");
 countrySearch.connection = connection;
 app.use("/country-search", countrySearch);
+
+const recordAdd = require("./routes/record_add");
+recordAdd.connection = connection;
+app.use("/records/add", recordAdd);
