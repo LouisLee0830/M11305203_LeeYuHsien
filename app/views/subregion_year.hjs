@@ -1,0 +1,43 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-geo-alt"></i> Sub-region by Year</h2>
+  <p class="text-muted">
+    Select a sub-region and a year, then list all countries in that sub-region with their Internet users.
+    Results are ordered by Internet users (ascending).
+  </p>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Sub-region</label>
+      <select class="form-select" name="subRegionId" id="subRegionId">
+        <option value="">-- Choose a sub-region --</option>
+        {{#subregions}}
+          <option value="{{SubRegionID}}">{{SubRegionName}}</option>
+        {{/subregions}}
+      </select>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <label class="form-label">Year</label>
+      <select class="form-select" name="year" id="year">
+        <option value="">-- Choose a year --</option>
+        {{#years}}
+          <option value="{{Year}}">{{Year}}</option>
+        {{/years}}
+      </select>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <button class="btn btn-primary"
+            hx-get="/subregion-year/list"
+            hx-target="#result"
+            hx-include="#subRegionId, #year"
+            hx-params="subRegionId,year">
+      Show Countries
+    </button>
+  </div>
+
+  <div id="result">
+    <div class="text-muted">Choose both a sub-region and a year, then click “Show Countries”.</div>
+  </div>
+</div>

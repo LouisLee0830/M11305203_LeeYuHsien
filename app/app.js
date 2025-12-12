@@ -52,3 +52,7 @@ app.listen(80, function () {
 const country = require("./routes/country");
 country.connection = connection;
 app.use("/country", country);
+
+const subregionYear = require("./routes/subregion_year");
+subregionYear.connection = connection;
+app.use("/subregion-year", subregionYear);
