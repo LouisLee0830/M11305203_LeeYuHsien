@@ -1,0 +1,22 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-graph-up"></i> Country Timeline</h2>
+
+  <div class="mb-3">
+    <label class="form-label">Country</label>
+    <select class="form-select"
+            name="countryId"
+            hx-get="/country/timeline"
+            hx-trigger="change"
+            hx-target="#timeline"
+            hx-include="[name='countryId']">
+      <option value="">-- Please choose a country --</option>
+      {{#countries}}
+        <option value="{{CountryID}}">{{CountryName}}</option>
+      {{/countries}}
+    </select>
+  </div>
+
+  <div id="timeline" class="mt-3">
+    <p class="text-muted">Choose a country from the dropdown above.</p>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+
+  <link rel="stylesheet" href="/bootstrap.min.css">
+  <link rel="stylesheet" href="/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/bootstrap.bundle.min.js"></script>
+
+  <style>
+    #toast {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ff0000c0;
+      color: yellow;
+      text-align: center;
+      padding: 12px 16px;
+      border-radius: 8px;
+      z-index: 9999;
+      max-width: 80vw;
+    }
+  </style>
+</head>
+
+<body class="container"
+      hx-ext="response-targets, remove-me"
+      hx-target-error="#toast"
+      hx-on::before-swap="doWrap(event)">
+
+  <header class="text-center my-3">
+    <h1 class="m-0">Internet Users Project</h1>
+  </header>
+
+  {{> navbar}}
+
+  <div id="toast"></div>
+
+  <main id="main" class="my-4"
+        {{#where}} hx-trigger="load" hx-get="{{where}}" {{/where}}>
+  </main>
+
+  <footer class="text-center my-4">
+    <p>&copy; 2025 Internet Users Project</p>
+  </footer>
+
+  <script src="/htmx.min.js"></script>
+  <script src="/response-targets.min.js"></script>
+
+  <script>
+    // LabManual 11: wrap error responses so they auto disappear using remove-me extension :contentReference[oaicite:7]{index=7}
+    function doWrap(e) {
+      if (e.detail && e.detail.isError) {
+        e.detail.serverResponse = `<div remove-me="3s">${e.detail.serverResponse}</div>`;
+      }
+    }
+  </script>
+</body>
+</html>
