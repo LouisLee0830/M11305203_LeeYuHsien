@@ -32,8 +32,8 @@ app.get("/", (req, res) => {
   });
 });
 
-// IMPORTANT: any non-HTMX request should be wrapped by layout,
-// and let layout load the real content via hx-get="{{where}}"
+
+
 app.get(/.*/, (req, res, next) => {
   if (req.get("HX-Request")) return next();
 
@@ -76,3 +76,8 @@ app.use("/records/update", recordUpdate);
 const recordDelete = require("./routes/record_delete");
 recordDelete.connection = connection;
 app.use("/records/delete", recordDelete);
+
+const countryGrowth = require("./routes/country_growth");
+countryGrowth.connection = connection;
+app.use("/country-growth", countryGrowth);
+

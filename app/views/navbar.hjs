@@ -18,6 +18,7 @@
           <a class="nav-link" href="/records/add/">Add Record</a>
           <a class="nav-link" href="/records/update/">Update Record</a>
           <a class="nav-link" href="/records/delete/">Delete Records</a>
+          <a class="nav-link" href="/country-growth/">Country Growth</a>
 
         </li>
       </ul>

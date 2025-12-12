@@ -1,0 +1,34 @@
+<h3 class="h5 mb-3">{{countryName}}</h3>
+
+{{#hasData}}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th class="text-end">Users</th>
+      <th class="text-end">Previous Year</th>
+      <th class="text-end">Growth</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#rows}}
+    <tr>
+      <td>{{Year}}</td>
+      <td class="text-end">{{CurrentUsers}}</td>
+      <td class="text-end">
+        {{#PreviousUsers}}{{PreviousUsers}}{{/PreviousUsers}}
+        {{^PreviousUsers}}N/A{{/PreviousUsers}}
+      </td>
+      <td class="text-end">
+        {{#Growth}}{{Growth}}{{/Growth}}
+        {{^Growth}}N/A{{/Growth}}
+      </td>
+    </tr>
+    {{/rows}}
+  </tbody>
+</table>
+{{/hasData}}
+
+{{^hasData}}
+<div class="alert alert-warning">No data available.</div>
+{{/hasData}}

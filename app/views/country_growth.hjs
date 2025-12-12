@@ -1,0 +1,25 @@
+<div class="p-3">
+  <h2 class="h4"><i class="bi bi-graph-up-arrow"></i> Country Growth</h2>
+  <p class="text-muted">
+    This feature shows year-over-year growth of Internet users for a selected country.
+  </p>
+
+  <div class="mb-3">
+    <label class="form-label">Country</label>
+    <select class="form-select"
+            name="countryId"
+            hx-get="/country-growth/table"
+            hx-target="#result"
+            hx-trigger="change"
+            hx-include="[name='countryId']">
+      <option value="">-- Choose a country --</option>
+      {{#countries}}
+        <option value="{{CountryID}}">{{CountryName}}</option>
+      {{/countries}}
+    </select>
+  </div>
+
+  <div id="result">
+    <div class="text-muted">Select a country to view growth data.</div>
+  </div>
+</div>
