@@ -1,0 +1,40 @@
+services:
+  db:
+    image: mysql:8
+    container_name: internetusers-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: InternetUsers
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/data:/var/lib/mysql-files
+    command:
+      - mysqld
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-prootpassword"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  web:
+    build:
+      context: ./app
+    container_name: internetusers-web
+    environment:
+      DB_HOST: db
+      DB_USER: InternetUsers
+      DB_PASSWORD: InternetUsersPassword
+      DB_NAME: InternetUsers
+    ports:
+      - "8080:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:
