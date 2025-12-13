@@ -122,6 +122,7 @@ Display year-over-year growth of Internet Users for a selected country, includin
 To run the application:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/LouisLee0830/M11305203_LeeYuHsien.git
+cd M11305203_LeeYuHsien
 docker compose up
 ```
